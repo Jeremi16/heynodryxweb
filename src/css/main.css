@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-bg text-[#EDEDED] font-sans antialiased;
+    }
+
+    ::selection {
+        @apply bg-accent/30 text-white;
+    }
+}
+
+@layer components {
+    /* Blinking cursor */
+    .cursor-blink::after {
+        content: "_";
+        animation: blink 1s step-end infinite;
+    }
+
+    /* Section headings */
+    .section-heading {
+        @apply font-mono text-sm text-muted mb-6 tracking-wide;
+    }
+
+    /* Card style */
+    .card {
+        @apply bg-surface border border-border rounded-lg p-6 card-hover;
+    }
+
+    .card-hover {
+        transition:
+            border-color 0.3s ease,
+            box-shadow 0.3s ease;
+    }
+
+    .card-hover:hover {
+        border-color: #60a5fa;
+        box-shadow: 0 0 24px rgba(96, 165, 250, 0.07);
+    }
+
+    /* Code block */
+    .code-block {
+        @apply bg-surface border border-border rounded-lg p-5 font-mono text-sm leading-relaxed overflow-x-auto;
+    }
+
+    /* Terminal list item */
+    .term-item {
+        @apply font-mono text-sm py-2 border-b border-border/50 last:border-b-0 flex items-start gap-4;
+    }
+
+    .term-prompt {
+        @apply text-accent shrink-0;
+    }
+
+    .term-cmd {
+        @apply text-[#EDEDED] shrink-0 w-44;
+    }
+
+    .term-desc {
+        @apply text-muted;
+    }
+
+    /* Button */
+    .btn {
+        @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-mono text-sm border border-border
+           transition-all duration-300 hover:border-accent hover:text-accent;
+    }
+
+    .btn-primary {
+        @apply btn bg-accent/10 border-accent/30 text-accent hover:bg-accent/15 hover:border-accent;
+    }
+}
+
+@layer utilities {
+    .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+            opacity 0.6s ease-out,
+            transform 0.6s ease-out;
+    }
+
+    .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1f1f1f;
+    border-radius: 3px;
+}
+
+@keyframes blink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* ── Docs layout ── */
+.docs-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 0;
+    min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+    .docs-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.sidebar-link {
+    @apply block py-1.5 text-sm transition-colors;
+}
+
+.sidebar-link:hover {
+    @apply text-accent;
+}
+
+.sidebar-section {
+    @apply font-mono text-xs text-muted mb-2 mt-6 first:mt-0 tracking-wide;
+}
+
+.docs-content h2 {
+    @apply font-mono text-xl font-semibold text-[#EDEDED] mt-12 mb-4 pb-2 border-b border-border;
+}
+
+.docs-content h2:first-child {
+    @apply mt-0;
+}
+
+.docs-content h3 {
+    @apply font-mono text-base font-semibold text-accent mt-8 mb-3;
+}
+
+.docs-content p {
+    @apply text-sm text-[#CCCCCC] leading-relaxed mb-4;
+}
+
+.docs-content ul {
+    @apply text-sm text-[#CCCCCC] leading-relaxed mb-4 pl-5 space-y-1;
+    list-style-type: disc;
+}
+
+.docs-content code {
+    @apply font-mono text-xs bg-surface border border-border rounded px-1.5 py-0.5 text-accent;
+}
+
+.docs-content pre {
+    @apply code-block mb-4;
+}
+
+.docs-content pre code {
+    @apply bg-transparent border-0 p-0 text-[#CCCCCC];
+}
