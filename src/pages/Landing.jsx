@@ -1,4 +1,5 @@
-import ScrollReveal from '../components/ScrollReveal.jsx';
+import ScrollReveal from "../components/ScrollReveal.jsx";
+import { Mic, Brain, Volume2, Wrench, Puzzle, Database } from "lucide-react";
 
 export default function Landing() {
   return (
@@ -13,7 +14,8 @@ export default function Landing() {
               <span className="cursor-blink"></span>
             </h1>
             <p className="text-muted text-base sm:text-lg max-w-xl mx-auto mb-10 leading-relaxed">
-              Voice assistant berbasis Python. Local-first, offline-capable, dan sepenuhnya privat.
+              Voice assistant berbasis Python. Local-first, offline-capable, dan
+              sepenuhnya privat.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <a href="#quickstart" className="btn-primary">
@@ -41,20 +43,25 @@ export default function Landing() {
           <ScrollReveal>
             <p className="section-heading">// about</p>
             <p className="text-lg sm:text-xl text-[#CCCCCC] leading-relaxed">
-              <strong className="text-[#EDEDED]">Hey Nodryx</strong> adalah asisten suara yang berjalan
-              sepenuhnya di mesin kamu. Speech-to-text pakai Whisper, text-to-speech pakai Edge TTS,
-              dan LLM fallback ke Sumopod + OpenRouter.
+              <strong className="text-[#EDEDED]">Hey Nodryx</strong> adalah
+              asisten suara yang berjalan sepenuhnya di mesin kamu.
+              Speech-to-text pakai Whisper, text-to-speech pakai Edge TTS, dan
+              LLM fallback ke Sumopod + OpenRouter.
             </p>
             <p className="text-muted mt-4 leading-relaxed">
-              Dibangun dengan Python. Tidak kirim data ke cloud kecuali kamu pilih. Dirancang untuk
-              developer dan pengguna harian yang peduli privasi.
+              Dibangun dengan Python. Tidak kirim data ke cloud kecuali kamu
+              pilih. Dirancang untuk developer dan pengguna harian yang peduli
+              privasi.
             </p>
           </ScrollReveal>
         </div>
       </section>
 
       {/* FEATURES */}
-      <section id="features" className="max-w-5xl mx-auto px-4 sm:px-6 py-24 sm:py-32 border-t border-border">
+      <section
+        id="features"
+        className="max-w-5xl mx-auto px-4 sm:px-6 py-24 sm:py-32 border-t border-border"
+      >
         <ScrollReveal>
           <p className="section-heading">// features</p>
         </ScrollReveal>
@@ -62,8 +69,14 @@ export default function Landing() {
           {features.map((f, i) => (
             <ScrollReveal key={i}>
               <div className="card">
-                <div className="font-mono text-accent text-lg mb-3">{f.icon}</div>
-                <h3 className="font-mono text-sm font-semibold text-[#EDEDED] mb-2">{f.title}</h3>
+                <f.Icon
+                  className="text-accent mb-3"
+                  size={24}
+                  strokeWidth={1.5}
+                />
+                <h3 className="font-mono text-sm font-semibold text-[#EDEDED] mb-2">
+                  {f.title}
+                </h3>
                 <p className="text-muted text-sm leading-relaxed">{f.desc}</p>
               </div>
             </ScrollReveal>
@@ -93,13 +106,17 @@ export default function Landing() {
             </div>
           </div>
           <p className="text-muted text-xs mt-4">
-            Local commands diproses tanpa LLM. LLM hanya dipanggil saat diperlukan.
+            Local commands diproses tanpa LLM. LLM hanya dipanggil saat
+            diperlukan.
           </p>
         </ScrollReveal>
       </section>
 
       {/* SKILLS */}
-      <section id="skills" className="max-w-5xl mx-auto px-4 sm:px-6 py-24 sm:py-32 border-t border-border">
+      <section
+        id="skills"
+        className="max-w-5xl mx-auto px-4 sm:px-6 py-24 sm:py-32 border-t border-border"
+      >
         <ScrollReveal>
           <p className="section-heading">// skills</p>
         </ScrollReveal>
@@ -123,34 +140,52 @@ export default function Landing() {
         </ScrollReveal>
         <ScrollReveal>
           <div className="code-block text-muted text-sm">
-            $ python -m assistant.main<br />
-            $ python -m assistant.main --text <span className="text-[#EDEDED]">"halo"</span> --no-speak<br />
-            $ python -m assistant.main --wake-word<br />
-            $ python -m assistant.main --text <span className="text-[#EDEDED]">"jam berapa"</span><br />
-            $ python -m assistant.main --model base --language id --device 2<br />
-            $ python -m assistant.main --tts-engine edge --edge-voice id-ID-GadisNeural
+            $ python -m assistant.main
+            <br />$ python -m assistant.main --text{" "}
+            <span className="text-[#EDEDED]">"halo"</span> --no-speak
+            <br />
+            $ python -m assistant.main --wake-word
+            <br />$ python -m assistant.main --text{" "}
+            <span className="text-[#EDEDED]">"jam berapa"</span>
+            <br />
+            $ python -m assistant.main --model base --language id --device 2
+            <br />$ python -m assistant.main --tts-engine edge --edge-voice
+            id-ID-GadisNeural
           </div>
         </ScrollReveal>
       </section>
 
       {/* QUICKSTART */}
-      <section id="quickstart" className="max-w-5xl mx-auto px-4 sm:px-6 py-24 sm:py-32 border-t border-border">
+      <section
+        id="quickstart"
+        className="max-w-5xl mx-auto px-4 sm:px-6 py-24 sm:py-32 border-t border-border"
+      >
         <ScrollReveal>
           <p className="section-heading">// quickstart</p>
         </ScrollReveal>
         <ScrollReveal>
           <div className="code-block">
             <div className="text-muted mb-2"># clone &amp; setup</div>
-            <div className="text-[#EDEDED]">$ git clone https://github.com/user/heynodryx</div>
+            <div className="text-[#EDEDED]">
+              $ git clone https://github.com/user/heynodryx
+            </div>
             <div className="text-[#EDEDED] mt-2">$ cd heynodryx</div>
             <div className="text-muted mt-4 mb-2"># virtual environment</div>
             <div className="text-[#EDEDED]">$ python -m venv .venv</div>
-            <div className="text-muted mt-1">$ .\.venv\Scripts\Activate.ps1</div>
+            <div className="text-muted mt-1">
+              $ .\.venv\Scripts\Activate.ps1
+            </div>
             <div className="text-muted mt-4 mb-2"># install &amp; run</div>
-            <div className="text-[#EDEDED]">$ pip install -r requirements.txt</div>
-            <div className="text-[#EDEDED] mt-2">$ python -m assistant.main</div>
+            <div className="text-[#EDEDED]">
+              $ pip install -r requirements.txt
+            </div>
+            <div className="text-[#EDEDED] mt-2">
+              $ python -m assistant.main
+            </div>
           </div>
-          <p className="text-muted text-xs mt-3">Butuh Python 3.10+. Windows, Linux, macOS supported.</p>
+          <p className="text-muted text-xs mt-3">
+            Butuh Python 3.10+. Windows, Linux, macOS supported.
+          </p>
         </ScrollReveal>
       </section>
 
@@ -163,13 +198,19 @@ export default function Landing() {
           <div className="space-y-3">
             {roadmap.map((r, i) => (
               <div key={i} className="flex items-center gap-4">
-                <div className={`w-2 h-2 rounded-full ${r.dotClass} shrink-0`}></div>
+                <div
+                  className={`w-2 h-2 rounded-full ${r.dotClass} shrink-0`}
+                ></div>
                 <div className="flex-1 bg-surface border border-border rounded-lg p-4 flex items-center justify-between">
                   <div>
-                    <span className={`font-mono text-sm ${r.textClass}`}>{r.phase}</span>
+                    <span className={`font-mono text-sm ${r.textClass}`}>
+                      {r.phase}
+                    </span>
                     <span className="text-muted text-sm ml-3">{r.label}</span>
                   </div>
-                  <span className="text-xs text-muted font-mono">{r.status}</span>
+                  <span className="text-xs text-muted font-mono">
+                    {r.status}
+                  </span>
                 </div>
               </div>
             ))}
@@ -195,8 +236,8 @@ function FlowStep({ label, accent, borderAccent }) {
   return (
     <div
       className={`bg-surface border rounded-lg px-4 py-3 whitespace-nowrap ${
-        accent ? 'text-accent' : 'text-[#EDEDED]'
-      } ${borderAccent ? 'border-accent/30' : 'border-border'}`}
+        accent ? "text-accent" : "text-[#EDEDED]"
+      } ${borderAccent ? "border-accent/30" : "border-border"}`}
     >
       {label}
     </div>
@@ -206,27 +247,93 @@ function FlowStep({ label, accent, borderAccent }) {
 // ── Data ──
 
 const features = [
-  { icon: '🎤', title: 'Speech-to-Text', desc: 'Whisper model lokal. Dukung Bahasa Indonesia. VAD otomatis, filter noise, transkripsi real-time.' },
-  { icon: '🧠', title: 'LLM Fallback', desc: 'Sumopod sebagai primary, OpenRouter sebagai backup. Auto-fallback tanpa crash.' },
-  { icon: '🔊', title: 'Text-to-Speech', desc: 'Edge TTS neural voices Indonesia. Juga support pyttsx3 offline. Chunked playback.' },
-  { icon: '🛠️', title: 'Local Tools', desc: 'Buka website, app, folder. Buat catatan. Cari file. Semua lewat suara, opsional konfirmasi.' },
-  { icon: '🧩', title: 'Skills System', desc: 'Plugin-based skills: web search, task calendar, mahasiswa ITERA, time planner, Hermes agent.' },
-  { icon: '📝', title: 'Memory', desc: 'SQLite persistent memory. Simpan fakta, profil, percakapan. Semantic keyword scoring.' },
+  {
+    Icon: Mic,
+    title: "Speech-to-Text",
+    desc: "Whisper model lokal. Dukung Bahasa Indonesia. VAD otomatis, filter noise, transkripsi real-time.",
+  },
+  {
+    Icon: Brain,
+    title: "LLM Fallback",
+    desc: "Sumopod sebagai primary, OpenRouter sebagai backup. Auto-fallback tanpa crash.",
+  },
+  {
+    Icon: Volume2,
+    title: "Text-to-Speech",
+    desc: "Edge TTS neural voices Indonesia. Juga support pyttsx3 offline. Chunked playback.",
+  },
+  {
+    Icon: Wrench,
+    title: "Local Tools",
+    desc: "Buka website, app, folder. Buat catatan. Cari file. Semua lewat suara, opsional konfirmasi.",
+  },
+  {
+    Icon: Puzzle,
+    title: "Skills System",
+    desc: "Plugin-based skills: web search, task calendar, mahasiswa ITERA, time planner, Hermes agent.",
+  },
+  {
+    Icon: Database,
+    title: "Memory",
+    desc: "SQLite persistent memory. Simpan fakta, profil, percakapan. Semantic keyword scoring.",
+  },
 ];
 
 const skills = [
-  { cmd: 'web_search', desc: 'cari di internet — Bing HTML, tanpa API key' },
-  { cmd: 'task_calendar', desc: 'kelola tugas, jadwal, reminders — local JSON' },
-  { cmd: 'itera_students', desc: 'database mahasiswa ITERA — SQLite FTS5 + XLSX import' },
-  { cmd: 'time_planner', desc: 'cek waktu, pengingat, timer' },
-  { cmd: 'hermes_agent', desc: 'subprocess / HTTP agent untuk task kompleks' },
+  { cmd: "web_search", desc: "cari di internet — Bing HTML, tanpa API key" },
+  {
+    cmd: "task_calendar",
+    desc: "kelola tugas, jadwal, reminders — local JSON",
+  },
+  {
+    cmd: "itera_students",
+    desc: "database mahasiswa ITERA — SQLite FTS5 + XLSX import",
+  },
+  { cmd: "time_planner", desc: "cek waktu, pengingat, timer" },
+  { cmd: "hermes_agent", desc: "subprocess / HTTP agent untuk task kompleks" },
 ];
 
 const roadmap = [
-  { phase: 'Phase A', label: 'Service Layer', dotClass: 'bg-accent', textClass: 'text-accent', status: 'done' },
-  { phase: 'Phase B', label: 'FastAPI Shell', dotClass: 'bg-accent', textClass: 'text-accent', status: 'done' },
-  { phase: 'Phase C', label: 'AsyncIO Boundary', dotClass: 'bg-accent/50', textClass: 'text-accent/70', status: 'in progress' },
-  { phase: 'Phase D', label: 'LangChain & LangGraph', dotClass: 'bg-border', textClass: 'text-muted', status: 'planned' },
-  { phase: 'Phase E', label: 'Background Workers', dotClass: 'bg-border', textClass: 'text-muted', status: 'planned' },
-  { phase: 'Phase F', label: 'Clients & Dashboard', dotClass: 'bg-border', textClass: 'text-muted', status: 'planned' },
+  {
+    phase: "Phase A",
+    label: "Service Layer",
+    dotClass: "bg-accent",
+    textClass: "text-accent",
+    status: "done",
+  },
+  {
+    phase: "Phase B",
+    label: "FastAPI Shell",
+    dotClass: "bg-accent",
+    textClass: "text-accent",
+    status: "done",
+  },
+  {
+    phase: "Phase C",
+    label: "AsyncIO Boundary",
+    dotClass: "bg-accent/50",
+    textClass: "text-accent/70",
+    status: "in progress",
+  },
+  {
+    phase: "Phase D",
+    label: "LangChain & LangGraph",
+    dotClass: "bg-border",
+    textClass: "text-muted",
+    status: "planned",
+  },
+  {
+    phase: "Phase E",
+    label: "Background Workers",
+    dotClass: "bg-border",
+    textClass: "text-muted",
+    status: "planned",
+  },
+  {
+    phase: "Phase F",
+    label: "Clients & Dashboard",
+    dotClass: "bg-border",
+    textClass: "text-muted",
+    status: "planned",
+  },
 ];
